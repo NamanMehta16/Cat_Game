@@ -1,6 +1,13 @@
 import React from "react";
+import { useDispatch, useSelector } from 'react-redux';
+
 
 export default function CatSprite() {
+  const store = useSelector((state) => state.store.value)
+  const style = {
+    transform: `translate(${store.x}px, ${store.y}px) rotate(${store.angle}deg)`,
+    transition: 'transform 0.2s'
+  };
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +16,8 @@ export default function CatSprite() {
       viewBox="0.3210171699523926 0.3000000357627869 95.17898101806641 100.04156036376953"
       version="1.1"
       xmlSpace="preserve"
+      style={style}
+
     >
       <g>
         <g id="Page-1" stroke="none" fillRule="evenodd">

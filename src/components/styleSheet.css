@@ -1,0 +1,42 @@
+.button-style {
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  }
+  
+  .button-style:active {
+    transform: translateY(2px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-style:hover {
+    filter: brightness(120%);
+  }
+  .top-right-buttons {
+    position: relative;
+    top: 10px;
+    left: 450px;
+    z-index: 10; /* Ensure buttons are above other content */
+    display: flex;
+    gap: 10px;
+  }
+  
+  .run-button,
+  .replay-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .run-button:hover,
+  .replay-button:hover {
+    background-color: #0056b3;
+  }
+  .run-button:active,
+  .replay-button:active {
+    transform: translateY(2px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  
