@@ -1,12 +1,18 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from "react-redux";
+import { setCatClicked } from "../actions";
+import "./styleSheet.css";
 
 export default function CatSprite() {
-  const store = useSelector((state) => state.store.value)
+  const store = useSelector((state) => state.value);
+  const dispatch = useDispatch();
+  const handleCatClick = () => {
+    dispatch(setCatClicked());
+  };
+
   const style = {
     transform: `translate(${store.x}px, ${store.y}px) rotate(${store.angle}deg)`,
-    transition: 'transform 0.2s'
+    transition: "transform 0.2s",
   };
   return (
     <svg
@@ -17,7 +23,10 @@ export default function CatSprite() {
       version="1.1"
       xmlSpace="preserve"
       style={style}
-
+      className="cat"
+      onClick={() => {
+        handleCatClick();
+      }}
     >
       <g>
         <g id="Page-1" stroke="none" fillRule="evenodd">
